@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
 from model import MatModel
 from view import MatView
+import os
 
 class MatController:
     def __init__(self, model, view):
@@ -44,7 +45,16 @@ class MatController:
             plt.title("Grafico del Canal")
             plt.xlabel("Muestras")
             plt.ylabel("Amplitud")
-            plt.show()
+
+            # Guardar la imagen en un archivo temporal
+            image_path = "temp_plot.png"
+            plt.savefig(image_path)
+
+            # Mostrar la imagen en el QLabel
+            self.view.show_image(image_path)
+
+            # Eliminar el archivo temporal después de mostrar la imagen
+            os.remove(image_path)
 
         except Exception as e:
             QMessageBox.critical(self.view, "Error", f"Error al graficar: {str(e)}")

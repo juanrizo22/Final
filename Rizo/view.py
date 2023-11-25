@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QComboBox, QMessageBox, QLabel, QPushButton, QSpinBox
+from PyQt5.QtGui import QPixmap
 
 class MatView(QMainWindow):
     def __init__(self):
@@ -6,7 +7,10 @@ class MatView(QMainWindow):
         self.controller = None
 
         self.setWindowTitle("MAT File Viewer")
-        self.setGeometry(100, 100, 800, 600)
+        self.setGeometry(100, 100, 800, 900)
+        self.setStyleSheet("background-color: rgb(255, 170, 255);")
+        self.image_label = QLabel(self)
+        self.image_label.setGeometry(10, 50, 780, 800)
 
     def set_controller(self,c):
         self.controller=c
@@ -33,3 +37,8 @@ class MatView(QMainWindow):
         plot_button = QPushButton("Graficar", self)
         plot_button.setGeometry(520, 10, 100, 30)
         plot_button.clicked.connect(self.controller.plot_channel)
+    
+    def show_image(self, image_path):
+        pixmap = QPixmap(image_path)
+        self.image_label.setPixmap(pixmap)
+        self.image_label.show()
