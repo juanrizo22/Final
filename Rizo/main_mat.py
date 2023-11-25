@@ -4,7 +4,7 @@ from model import MatModel
 from view import MatView
 from controller import MatController
 
-if __name__ == "__main__":
+def main_mat():
     app = QApplication(sys.argv)
 
     modelo = MatModel()
@@ -14,3 +14,6 @@ if __name__ == "__main__":
     vista.init_ui()
     vista.show()
     sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main_mat()

@@ -17,20 +17,7 @@ class Coordinador(object):
     
     def get_file(self,filename):
         self.__mi_modelo.get_path(filename)
-    # def listfile(self,file):
-    #     return self.__mi_modelo.verarchivos(file)
+
     def infomartion (self, picture):
         return self.__mi_modelo.obtener_informacion_paciente(picture)
 
-def main():
-
-    app = QApplication(sys.argv)
-    mi_vista = Ventanainicio()
-    mi_modelo = basededatos()
-    mi_coordinador = Coordinador(mi_vista, mi_modelo)
-    mi_vista.setCoordinador(mi_coordinador)
-    mi_vista.show()
-    sys.exit(app.exec_())
-
-if __name__ == "__main__":
-    main()
