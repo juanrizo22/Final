@@ -7,7 +7,8 @@ class View:
     def __init__(self, root, controller):
         self.root = root
         self.root.title("Aplicación Morfológica")
-        self.root.configure(bg='#FFAAFF')  # Set the background color of the main window
+        self.root.configure(bg='#FFAAFF')
+        self.root.geometry("750x700") 
         self.controller = controller
 
         # Botón para cargar imagen
