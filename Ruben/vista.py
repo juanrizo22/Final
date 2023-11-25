@@ -10,7 +10,7 @@ from PyQt5.uic import loadUi
 class Ventanainicio(QMainWindow):
     def __init__(self,ppal=None):
         super().__init__(ppal)
-        loadUi("inicio.ui",self)
+        loadUi("Ruben\inicio.ui",self)
         self.setup()
     
     def setup(self):
@@ -43,7 +43,7 @@ class Ventanainicio(QMainWindow):
 class Vista(QDialog):
     def __init__(self):
         super().__init__()
-        loadUi("ventana_img2.ui", self)
+        loadUi(r"Ruben\ventana_img2.ui", self)
         self.setup()
 
     def setup(self):
