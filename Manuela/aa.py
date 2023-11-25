@@ -10,7 +10,11 @@ class AplicacionMorfologica:
         self.ventana.title(titulo)
 
         # Personalizar la apariencia de la ventana
-        self.ventana.configure(bg='pink')  # Fondo rosado
+        self.ventana.configure(bg='#FFAAFF')  # Fondo rosado
+        self.ventana.geometry("750x700")  # Tamaño de la ventana
+
+        
+
 
         # Variables para la ruta de la imagen, el tamaño del kernel y la imagen
         self.ruta_imagen = None
@@ -22,7 +26,7 @@ class AplicacionMorfologica:
         btn_cargar.pack(pady=10)
 
         # Control deslizante para ajustar el tamaño del kernel
-        lbl_tamano_kernel = tk.Label(ventana, text="Tamaño del Kernel:", bg='pink', font=('Arial', 14))
+        lbl_tamano_kernel = tk.Label(ventana, text="Tamaño del Kernel:", bg='#FFAAFF', font=('Arial', 14))
         lbl_tamano_kernel.pack()
         sld_tamano_kernel = tk.Scale(ventana, from_=1, to=30, orient="horizontal", command=self.actualizar_tamano_kernel)
         sld_tamano_kernel.set(self.tamano_kernel)
@@ -62,7 +66,7 @@ class AplicacionMorfologica:
             self.lbl_imagen.image = imagen_tk
         else:
             # Si no, crear una nueva etiqueta de imagen
-            self.lbl_imagen = tk.Label(self.ventana, image=imagen_tk, bg='pink')
+            self.lbl_imagen = tk.Label(self.ventana, image=imagen_tk, bg='blue')
             self.lbl_imagen.image = imagen_tk
             self.lbl_imagen.pack()
 
@@ -96,7 +100,6 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = AplicacionMorfologica(root, "Aplicación Morfológica")
     root.mainloop()
-
 
 
 
