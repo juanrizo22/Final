@@ -8,4 +8,3 @@ def main_png():
     root = tk.Tk()
     controller = PNGController(root, model, None)
     root.mainloop()
-
