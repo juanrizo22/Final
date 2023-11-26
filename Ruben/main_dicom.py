@@ -1,8 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from vista import Ventanainicio
-from modelo import basededatos
-from controlador import Coordinador
+from vista_dicom import Ventanainicio
+from modelo_dicom import basededatos
+from controlador_dicom import Coordinador
 def main_dicom():
 
     app = QApplication(sys.argv)

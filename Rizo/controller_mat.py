@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
-from model import MatModel
-from view import MatView
+from model_mat import MatModel
+from view_mat import MatView
 import os
 
 class MatController:

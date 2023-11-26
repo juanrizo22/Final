@@ -1,8 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from model import MatModel
-from view import MatView
-from controller import MatController
+from model_mat import MatModel
+from view_mat import MatView
+from controller_mat import MatController
 
 def main_mat():
     app = QApplication(sys.argv)
