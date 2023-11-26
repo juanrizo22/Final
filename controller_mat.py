@@ -11,6 +11,7 @@ class MatController:
         self.view = view
 
         self.view.controller = self
+    
 
     def load_mat_file(self):
         if self.view is not None:  

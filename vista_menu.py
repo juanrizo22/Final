@@ -1,11 +1,12 @@
 import tkinter as tk
 from tkinter import messagebox
-class VistaLogin(tk.Toplevel):
+class VistaLogin(tk.Tk):
     def __init__(self, controlador):
         super().__init__()
 
         self.title("Login")
-        self.geometry("300x150")
+        self.geometry("500x300")
+        self.config(bg="pink")
 
         self.controlador = controlador
 
@@ -24,12 +25,13 @@ class VistaLogin(tk.Toplevel):
         self.boton_ingresar = tk.Button(self, text="Ingresar", command=self.controlador.verificar_credenciales)
         self.boton_ingresar.pack()
 
-class VistaPrincipal(tk.Toplevel):
+class VistaPrincipal(tk.Tk):
     def __init__(self, controlador):
         super().__init__()
 
         self.title("Principal")
-        self.geometry("300x300")
+        self.geometry("500x300")
+        self.config(bg="pink")
 
         self.controlador = controlador
 
