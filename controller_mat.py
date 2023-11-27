@@ -60,6 +60,3 @@ class MatController:
         except Exception as e:
             QMessageBox.critical(self.view, "Error", f"Error al graficar: {str(e)}")
         
-    def closeEvent(self, event):
-      self.hide()
-      event.accept()

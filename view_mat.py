@@ -41,10 +41,12 @@ class MatView(QMainWindow):
         # Botón para cerrar la ventana actual
         close_button = QPushButton("Cerrar", self)
         close_button.setGeometry(640, 10, 100, 30)
-        close_button.clicked.connect(self.controller.closeEvent)
+        close_button.clicked.connect(self.closeEvent)
     
     def show_image(self, image_path):
         pixmap = QPixmap(image_path)
         self.image_label.setPixmap(pixmap)
         self.image_label.show()
 
+    def closeEvent(self):
+      self.hide()
