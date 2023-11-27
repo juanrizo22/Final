@@ -1,5 +1,5 @@
-from modelo import basededatos
-from vista import Vista
+from modelo_dicom import basededatos
+from vista_dicom import Vista
 import sys
 from PyQt5.QtWidgets import QApplication
 

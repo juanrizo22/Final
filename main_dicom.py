@@ -6,7 +6,7 @@ from controlador_dicom import Coordinador
 def main_dicom():
 
     app = QApplication(sys.argv)
-    mi_vista = Ventanainicio()
+    mi_vista = Vista()
     mi_modelo = basededatos()
     mi_coordinador = Coordinador(mi_vista, mi_modelo)
     mi_vista.setCoordinador(mi_coordinador)
