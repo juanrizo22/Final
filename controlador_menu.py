@@ -39,7 +39,8 @@ class Controlador:
         dicom_window.show()
 
     def csv(self):
-        mainCSV()
+        csv_window = mainCSV()
+        csv_window.show()
 
 
 if __name__ == "__main__":

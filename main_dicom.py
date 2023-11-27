@@ -19,3 +19,5 @@ if __name__ == "__main__":
     main_window.setCentralWidwet(main_dicom_window)
     main_window.show()
     sys.exit(app.exec_())
+
+
