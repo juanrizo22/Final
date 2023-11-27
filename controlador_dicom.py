@@ -15,7 +15,6 @@ class Coordinador(object):
     
     def get_file(self,filename):
         self.__mi_modelo.get_path(filename)
-    # def listfile(self,file):
-    #     return self.__mi_modelo.verarchivos(file)
+        
     def infomartion (self, picture):
         return self.__mi_modelo.obtener_informacion_paciente(picture)

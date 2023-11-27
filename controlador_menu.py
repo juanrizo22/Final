@@ -1,5 +1,4 @@
-import tkinter as tk
-from tkinter import messagebox
+from PyQt5.QtWidgets import QApplication,QMessageBox
 from vista_menu import VistaLogin, VistaPrincipal
 from menu_model import ModeloMenu
 from main_dicom import main_dicom
@@ -10,31 +9,33 @@ from main_csv import mainCSV
 class Controlador:
     def __init__(self, modelo):
         self.modelo = modelo
+        self.app = QApplication([])
         self.vista_login = VistaLogin(self)
         self.vista_principal = None
 
     def verificar_credenciales(self):
-        usuario = self.vista_login.entry_usuario.get()
-        contraseña = self.vista_login.entry_contraseña.get()
+        usuario = self.vista_login.entry_usuario.text()
+        contraseña = self.vista_login.entry_contraseña.text()
 
         if usuario in self.modelo.usuarios and self.modelo.usuarios[usuario] == contraseña:
-            self.vista_login.destroy()
+            self.vista_login.close()
             self.mostrar_vista_principal()
         else:
-            messagebox.showerror("Error", "Credenciales incorrectas")
+            QMessageBox.critical(self.vista_login, "Error", "Credenciales incorrectas")
 
     def mostrar_vista_principal(self):
         self.vista_principal = VistaPrincipal(self)
+        self.vista_principal.show()
 
     def mat(self):
         main_mat()
-    
+
     def png(self):
         main_png()
-    
+
     def dicom(self):
         main_dicom()
-    
+
     def csv(self):
         mainCSV()
 
@@ -42,4 +43,5 @@ class Controlador:
 if __name__ == "__main__":
     modelo = ModeloMenu()
     controlador = Controlador(modelo)
-    controlador.vista_login.mainloop()
+    controlador.vista_login.show()
+    controlador.app.exec_()
