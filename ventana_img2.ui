@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Dialog</class>
  <widget class="QDialog" name="Dialog">
@@ -35,7 +35,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(195, 176, 218);</string>
+    <string notr="true">background-color: rgb(255, 170, 255);</string>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">

@@ -9,6 +9,7 @@ def mainCSV():
     mi_vista = VentanaCSV()
     mi_coordinador = Coordinador(mi_vista, mi_modelo)
     mi_vista.setCoordinador(mi_coordinador)
+    mi_vista.setup()
     return mi_vista
 
 if __name__ == "__main__":
