@@ -6,7 +6,7 @@ class VistaLogin(QWidget):
 
         self.setWindowTitle("Login")
         self.setGeometry(100, 100, 500, 300)
-        self.setStyleSheet("background-color: pink;")
+        self.setStyleSheet("background-color: rgb(255, 170, 255);")
 
         self.controlador = controlador
 
@@ -35,7 +35,7 @@ class VistaPrincipal(QWidget):
 
         self.setWindowTitle("Principal")
         self.setGeometry(100, 100, 500, 300)
-        self.setStyleSheet("background-color: pink;")
+        self.setStyleSheet("background-color: rgb(255, 170, 255);")
 
         self.controlador = controlador
 
