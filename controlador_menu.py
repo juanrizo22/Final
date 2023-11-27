@@ -35,7 +35,8 @@ class Controlador:
         main_png()
 
     def dicom(self):
-        main_dicom()
+        dicom_window = main_dicom()
+        dicom_window.show()
 
     def csv(self):
         mainCSV()
