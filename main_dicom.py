@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from vista_dicom import Ventanainicio
+from vista_dicom import Vista
 from modelo_dicom import basededatos
 from controlador_dicom import Coordinador
 def main_dicom():
