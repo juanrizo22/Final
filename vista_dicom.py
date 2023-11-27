@@ -6,8 +6,6 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt,QRegExp
 from PyQt5.uic import loadUi
 
-
-
 class Vista(QDialog):
     def __init__(self):
         super().__init__()
