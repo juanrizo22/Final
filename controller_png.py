@@ -1,7 +1,6 @@
-import tkinter as tk
+
 from tkinter import filedialog
 from view_png import PNGView
-from model_png import PNGModel
 
 class PNGController:
     def __init__(self, root, model, view):

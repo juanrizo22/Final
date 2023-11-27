@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QFileDialog, QComboBox, QMessageBox, QLabel, QPushButton, QSpinBox
+from PyQt5.QtWidgets import QMainWindow,  QComboBox,  QLabel, QPushButton, QSpinBox
 from PyQt5.QtGui import QPixmap
 
 class MatView(QMainWindow):
