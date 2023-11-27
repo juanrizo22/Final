@@ -1,4 +1,5 @@
 import pydicom 
+import mysql.connector
 from PyQt5.QtCore import QObject
 import matplotlib.pyplot as plt
 import os
@@ -47,6 +48,48 @@ class basededatos(QObject):
         }
 
         return info_paciente
-
     
+class MySQL:
+
+    def conectar_bd(self):
+        try:
+            conexion = mysql.connector.connect(
+                host='localhost',
+                user='informatica2',
+                password='bio123',
+                database='informatica2'
+            )
+            print("Conexión exitosa a la base de datos")
+            return conexion
+        except mysql.connector.Error as err:
+            print(f"No se pudo conectar: {err}")
+            return None
+
+    def crear_tabla(self):
+        try:
+            conexion = self.conectar_bd()
+            if conexion:
+                cursor = conexion.cursor()
+                cursor.execute("CREATE TABLE IF NOT EXISTS pacientes (lote INT PRIMARY KEY, nombre VARCHAR(100), ID VARCHAR(100), fecha_nacimiento DATE, sexo VARCHAR(10))")
+                conexion.commit()
+                cursor.close()
+                conexion.close()
+        except mysql.connector.Error as err:
+            print(f"Error al crear la tabla: {err}")
+
+    def insertar_paciente(self, info_paciente):
+        try:
+            conexion = self.conectar_bd()
+            if conexion:
+                cursor = conexion.cursor()
+                consulta = "INSERT INTO pacientes (nombre, ID, fecha_nacimiento, sexo) VALUES (%s, %s, %s, %s)"
+                datos = (info_paciente['Nombre'], info_paciente['ID'], info_paciente['Fecha de Nacimiento'], info_paciente['Sexo'])
+                cursor.execute(consulta, datos)
+                conexion.commit()
+                cursor.close()
+                conexion.close()
+                print("Paciente insertado correctamente")
+        except mysql.connector.Error as err:
+            print(f"Error al insertar paciente en la base de datos: {err}")
+
     
