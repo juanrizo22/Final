@@ -52,9 +52,9 @@ class Vista(QDialog):
                 pixmap = QPixmap("temp_image.png").scaled(self.label.size(), Qt.KeepAspectRatio)
                 self.label.setPixmap(pixmap)
                 os.remove("temp_image.png")
-        except:
-            QMessageBox.warning(self, "Error de Permiso", f"No se pude abrir la carpeta")
-
+        except Exception as e:
+            
+            QMessageBox.warning(self, "Error", f"Error al mostrar la imagen seleccionada: {str(e)}")
 
     def cargar(self):
         try:
@@ -62,15 +62,16 @@ class Vista(QDialog):
             self.__coordinador2.img_conextion(imagen)
             pixmap = QPixmap("temp_image.png").scaled(self.label.size(), Qt.KeepAspectRatio)
             self.label.setPixmap(pixmap)
-            info_paciente = self.__coordinador2.infomartion(imagen)
+            info_paciente = self.__coordinador2.information(imagen)
+            self.__coordinador2.insertar_paciente_en_db(imagen)
             texto = f"Nombre: {info_paciente.get('Nombre', '')}\nID: {info_paciente.get('ID', '')}\nFecha: {info_paciente.get('Fecha de Nacimiento', '')}\nSexo: {info_paciente.get('Sexo', '')}"
             current_index = self.comboBox.currentIndex()
             self.verticalSlider.setValue(current_index)
             self.datos.setText(texto)
             os.remove("temp_image.png")
-        
-        except:
-            QMessageBox.warning(self, "Error de Permiso", f"No se pude abrir la carpeta")
+        except Exception as e:
+
+            QMessageBox.warning(self, "Error", f"Error al cargar: {str(e)}")
 
     def sliderValueChanged(self, value):
         self.comboBox.setCurrentIndex(value)
@@ -79,6 +80,8 @@ class Vista(QDialog):
 
     def closeWindow(self):
         self.hide()
+
+
 
 
 
