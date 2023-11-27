@@ -28,7 +28,8 @@ class Controlador:
         self.vista_principal.show()
 
     def mat(self):
-        main_mat()
+        mat_window = main_mat()
+        mat_window.show()
 
     def png(self):
         main_png()
