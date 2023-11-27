@@ -4,7 +4,7 @@ import sys
 from PyQt5.QtWidgets import QApplication
 from controller_csv import Coordinador
 
-def main():
+def mainCSV():
     app = QApplication(sys.argv)
     mi_modelo = CSVModel()
     mi_vista = VentanaCSV()
@@ -14,4 +14,4 @@ def main():
     sys.exit(app.exec_())
 
 if __name__ == "__main__":
-    main()
+    mainCSV()

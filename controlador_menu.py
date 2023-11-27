@@ -5,6 +5,7 @@ from menu_model import ModeloMenu
 from main_dicom import main_dicom
 from main_mat import main_mat
 from main_png import main_png
+from main_csv import mainCSV
 
 class Controlador:
     def __init__(self, modelo):
@@ -35,7 +36,7 @@ class Controlador:
         main_dicom()
     
     def csv(self):
-        pass
+        mainCSV()
 
 
 if __name__ == "__main__":
